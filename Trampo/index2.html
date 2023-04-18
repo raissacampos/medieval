@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guerra dos Deuses</title>
+    <style>
+        .cartas{
+            display:flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            padding: 0;
+        }
+
+        .uma-carta{
+            list-style: none;
+            text-align: center;
+            border: 1px solid;
+            width: 400px;
+            padding: 0;
+            border-radius: 10px;
+            margin-bottom: 40px;
+            overflow: hidden;
+        }
+
+        .imagem{
+            margin: 0;
+        }
+
+        .imagem img{
+            width: 400px;
+            height: 300px;
+            object-fit: cover;
+            transition: transform 0.4 ease-in-out;
+            border-radius: 5px 5px 0 0;
+        }
+
+        .imagem img:hover{
+            transform: scale(1.1);
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Guerra dos Deuses</h1>
+    <h3>"Domine o Olimpo e torne-se o deus supremo!"</h3>
+    <p>"Guerra dos Deuses" é um jogo de estratégia em que os jogadores assumem o papel de deuses mitológicos em uma
+        batalha épica pela supremacia divina</p>
+    <ul class="cartas"></ul>
+
+    <script>
+
+        const personagens = [
+            {
+                nome: "Rainha Escarlate",
+                foto: "rainha.jpg",
+                frase: "Minha coroa pode brilhar, mas meu olhar é mais forte.",
+                descricao: "A história da Rainha Escarlate, uma nobre que governou um reino por muitos anos com sabedoria e ferocidade, é contada em todo o mundo."
+            },
+            {
+                nome: "Cavalheiro de Ferro",
+                foto: "cavaleiro.jpg",
+                frase: "Minha armadura é minha honra.",
+                descricao: "O Cavalheiro de Ferro é conhecido por sua bravura e lealdade, tendo sido um defensor da justiça por toda a sua vida."
+            },
+            {
+                nome: "Cavalo Trovão",
+                foto: "cavalo.jpg",
+                frase: "Meu galope é como o trovão que ressoa pelos campos.",
+                descricao: "Cavalo Trovão é um belo e forte cavalo que tem servido bravamente aos seus donos por muitos anos."
+            },
+            {
+                nome: "Duende Poderoso",
+                foto: "duende.jpg",
+                frase: "Meu tamanho pode enganar, mas meu poder é real.",
+                descricao: "O Duende Poderoso é um ser pequeno, mas muito habilidoso nas artes mágicas e conhecido por sua sabedoria."
+            },
+            {
+                nome: "Fada Rosa",
+                foto: "fada.jpg",
+                frase: "O amor é minha magia.",
+                descricao: "A Fada Rosa é conhecida por sua beleza e pela magia do amor que espalha por onde passa."
+            },
+            {
+                nome: "Guerreiro da Luz",
+                foto: "guerreiro.jpg",
+                frase: "Minha espada é minha luz na escuridão.",
+                descricao: "O Guerreiro da Luz é um defensor da justiça e da verdade, tendo lutado muitas batalhas em nome da paz e da liberdade."
+            },
+            {
+                nome: "Lobo Sangrento",
+                foto: "lobo.jpg",
+                frase: "Meus olhos são vermelhos como o sangue que derramo.",
+                descricao: "O Lobo Sangrento é conhecido por sua ferocidade e lealdade, tendo sido um grande companheiro de caça para muitos."
+            },
+            {
+                nome: "Troll Verde",
+                foto: "troll.jpg",
+                frase: "Meu tamanho pode assustar, mas meu coração é bondoso.",
+                descricao: "O Troll Verde é um ser grande e forte, mas com um coração bondoso e sempre pronto a ajudar os outros."
+            },
+            {
+                nome: "Vampiro Cinza",
+                foto: "vampiro.jpg",
+                frase: "Meus olhos refletem a tristeza de séculos vividos.",
+                descricao: "O Vampiro Cinza é um ser solitário, tendo vivido muitos séculos e visto muitas mudanças no mundo."
+            },
+            {
+                nome: "Bruxa Loira",
+                foto: "bruxa.jpg",
+                frase: "Minha magia é tão forte quanto meu cabelo.",
+                descricao: "A Bruxa Loira é conhecida por sua beleza e sua habilidade nas artes mágicas, tendo ajudado muitos em suas vidas."
+            }
+        ];
+
+        personagens.forEach(function (carta) {
+            let conteudo = "<li class='uma-carta'>";
+            conteudo += `<p class='nome'>${carta.nome}</p>`;
+            conteudo += `<p class='imagem'><img src="${carta.foto}" width="300"></p>`;
+            conteudo += `<p class='frase'>${carta.frase}</p>`;
+            conteudo += `<p class='historia'>${carta.descricao}</p>`;
+            conteudo += "</li>";
+            document.querySelector(".cartas").innerHTML += conteudo;
+        })
+
+    </script>
+</body>
+
+</html>
